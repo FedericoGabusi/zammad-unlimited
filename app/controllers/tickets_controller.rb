@@ -12,7 +12,7 @@ class TicketsController < ApplicationController
 
   # GET /api/v1/tickets
   def index
-    paginate_with(max: 100)
+    paginate_with(max: 1000)
 
     tickets = TicketPolicy::ReadScope.new(current_user).resolve
                                      .reorder(id: :asc)
